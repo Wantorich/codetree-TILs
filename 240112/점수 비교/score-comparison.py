@@ -5,7 +5,7 @@ engA, engB = input().split()
 engA = int(engA)
 engB = int(engB)
 
-if (mathA > mathB and engA > engB) :
+if (mathA > engA and mathB > engB) :
     print(1)
 else :
     print(0)
