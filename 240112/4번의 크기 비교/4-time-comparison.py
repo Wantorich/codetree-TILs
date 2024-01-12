@@ -1,0 +1,11 @@
+a = int(input())
+b, c, d, e = input().split()
+b = int(b)
+c = int(c)
+d = int(d)
+e = int(e)
+
+print('%d' % 1 if a > b else 0)
+print('%d' % 1 if a > c else 0)
+print('%d' % 1 if a > d else 0)
+print('%d' % 1 if a > e else 0)
