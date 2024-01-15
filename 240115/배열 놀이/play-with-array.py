@@ -1,7 +1,7 @@
 n, q = map(int, input().split())
 arr = list(map(int, input().split()))
 
-for _ in range(n) :
+for _ in range(q) :
     line = list(map(int, input().split()))
     odr, idx = line[0], line[1]
     if odr == 1 :
