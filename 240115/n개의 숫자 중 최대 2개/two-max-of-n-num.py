@@ -22,5 +22,6 @@ for num in arr[idx+1:] :
     if max_right <= num :
         max_right = num
 
+print(max_left, max_right)
 print(max_val, end=' ')
 print('%d' % max_left if max_left >= max_right else max_right)
