@@ -15,4 +15,4 @@ for _ in range(q) :
         endex = line[2]
         for i in range(idx-1, endex) :
             print(arr[i], end=' ')
-            print()
+        print()
