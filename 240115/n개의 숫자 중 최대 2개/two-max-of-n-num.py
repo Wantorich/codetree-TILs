@@ -12,6 +12,8 @@ for num in arr[1:] :
 
 max_left = -sys.maxsize
 for num in arr[:idx] :
+    if idx <= 0 :
+        break;
     if max_left <= num :
         max_left = num
 
