@@ -9,6 +9,8 @@ for _ in range(q) :
     elif odr == 2 :
         if idx in arr :
             print(arr.index(idx)+1)
+        else :
+            print(0)
     elif odr == 3 :
         endex = line[2]
         for i in range(idx-1, endex) :
