@@ -1,3 +1,5 @@
+import sys
+
 n = int(input())
 arr = list(map(int, input().split()))
 max_val = arr[0]
@@ -7,12 +9,13 @@ for num in arr[1:] :
         max_val = num
         idx = arr.index(num)
 
-max_left = arr[0]
+
+max_left = -sys.maxsize
 for num in arr[:idx] :
     if max_left <= num :
         max_left = num
 
-max_right = arr[-1]
+max_right = -sys.maxsize
 for num in arr[idx+1:] :
     if max_right <= num :
         max_right = num
