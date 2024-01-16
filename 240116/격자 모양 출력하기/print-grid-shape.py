@@ -4,7 +4,7 @@ arr_2d = [
     for _ in range(n)
 ]
 
-for _ in range(n) : 
+for _ in range(m) : 
     x, y = tuple(map(int, input().split()))
     arr_2d[x-1][y-1] = x * y
 
