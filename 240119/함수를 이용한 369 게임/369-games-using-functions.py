@@ -4,7 +4,7 @@ def is_3_mulitple(n) :
     str_num = str(n)
     for s in str_num :
         num = int(s)
-        if num % 3 == 0 :
+        if num % 3 == 0 and num != 0:
             return True
     return False
 
