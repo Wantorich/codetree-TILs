@@ -36,13 +36,21 @@ def is_exist(y,m,d) :
     return False
 
 if is_exist(y, m, d) :
-    if 3 <= m <= 5 :
-        print('Spring')
-    elif 6 <= m <= 8 :
-        print('Summer')
-    elif 9 <= m <= 11 :
-        print('Fall')
-    elif 12 <= m or m >= 1 :
+    if m <= 2 :
         print('Winter')
+    elif m <= 5 :
+        print('Spring')
+    elif m <= 8 :
+        print('Summer')
+    elif m <= 11 :
+        print('Fall')
+    else :
+        print('Winter')
+
+
+    # if 3 <= m <= 5 :
+    # elif 6 <= m <= 8 :
+    # elif 9 <= m <= 11 :
+    # elif 12 <= m or m >= 1 :
 else :
     print(-1)
