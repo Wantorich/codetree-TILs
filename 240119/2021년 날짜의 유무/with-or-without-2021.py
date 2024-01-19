@@ -9,12 +9,12 @@ def is_in_2021(m, d) :
         else :
             return True
     elif m == 4 or m == 6 or m == 9 or m == 11 :
-        if d > 31 :
+        if d > 30 :
             return False
         else :
             return True
     elif m <= 12 :
-        if d > 30 :
+        if d > 31 :
             return False
         else :
             return True
