@@ -7,7 +7,6 @@ def have_diff_chars(word) :
             return True
         else :
             arr[index] += 1
-    return False
 
 word = input()
 if have_diff_chars(word) :
