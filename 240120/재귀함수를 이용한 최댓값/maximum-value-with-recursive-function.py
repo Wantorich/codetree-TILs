@@ -3,7 +3,7 @@
 # length를 최대값으로 잡고 인덱스를 증가시키면서 비교?
 def is_max(n) :
     global arr
-    if n == 0 :
+    if n == -1 :
         return -1
     return max(arr[n], is_max(n-1))
 
