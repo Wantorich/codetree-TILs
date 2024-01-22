@@ -19,7 +19,7 @@ for i in range(n) :
     if weather == 'Rain' :
         y, m, d = map(int, date.split('-'))
         date_cmp = datetime(y,m,d)
-        date_diffs.append(abs(date_now - date_cmp))
+        date_diffs.append(date_cmp - date_now)
         weathers.append(Weather(date,day,weather))
 
 index = date_diffs.index(min(date_diffs))
