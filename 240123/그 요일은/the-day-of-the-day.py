@@ -10,14 +10,16 @@
 m1, d1, m2, d2 = map(int, input().split())
 day = input()
 days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-num_of_days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+num_of_days = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 diff_days = sum(num_of_days[:m2]) + d2 - (sum(num_of_days[:m1]) + d1)
-mon_times = diff_days // 7
+mon_times = diff_days // 7 
 remain = diff_days % 7
 
 if day != 'Mon' :
     if days.index(day) <= remain :
         mon_times += 1
+else :
+    mon_times += 1
 
-print(mon_times+1)
+print(mon_times)
