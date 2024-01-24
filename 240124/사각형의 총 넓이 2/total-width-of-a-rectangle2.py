@@ -4,7 +4,7 @@ rects = [
     for _ in range(2)
 ]
 
-coord = [[0 for _ in range(101)] for _ in range(101)]
+coord = [[0 for _ in range(201)] for _ in range(201)]
 for rect in rects :
     min_ = min(rect)
     if min_ < 0 :
