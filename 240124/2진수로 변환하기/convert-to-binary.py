@@ -1,9 +1,10 @@
 n = int(input())
 digits = []
 
+if n == 0 :
+    digits.append(0)
+
 while n > 0:
-    # if n < 2 :
-    #     digits.append(n)
     digits.append(n % 2)
     n //= 2
 
