@@ -1,7 +1,7 @@
 n = int(input())
 rects = [
     tuple(map(int, input().split()))
-    for _ in range(2)
+    for _ in range(n)
 ]
 
 coord = [[0 for _ in range(201)] for _ in range(201)]
