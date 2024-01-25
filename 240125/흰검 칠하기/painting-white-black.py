@@ -15,16 +15,16 @@ for _ in range(n) :
             r_cnt[i] += 1 
             if l_cnt[i] >= 2 and r_cnt[i] >= 2 :
                 place[i] = 100
-        curr += x
+        curr += x - 1
     else :
-        for i in range(curr-x, curr) :
+        for i in range(curr, curr-x, -1) :
             if place[i] == 100 :
                 continue
             place[i] = -1
             l_cnt[i] += 1
             if l_cnt[i] >= 2 and r_cnt[i] >= 2 :
                 place[i] = 100
-        curr -= x
+        curr -= x - 1
 
 f_place = list(filter(lambda x : x != 0, r_cnt))
 # print(f_place)
