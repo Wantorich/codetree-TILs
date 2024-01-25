@@ -8,12 +8,10 @@ for _ in range(n) :
     if direct == 'R' :
         for i in range(curr, curr+x) :
             place[i] = 1
-        curr += x
+        curr += x - 1
     else :
-        for i in range(curr-x, curr) :
+        for i in range(curr, curr-x, -1) :
             place[i] = -1
-        curr -= x
+        curr -= x - 1
 
 print(place.count(-1), place.count(1))
-# f_place = list(filter(lambda x : x >= 2 ,place))
-# print(len(f_place))
