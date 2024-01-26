@@ -11,7 +11,10 @@ for i in range(n) :
         else :
             cnt = 1
     else :
-        cnt = 1
+        if arr[i] > t :
+            cnt = 1
+        else :
+            cnt = 0
     max_cnt = max(max_cnt, cnt)
 
 print(max_cnt)
