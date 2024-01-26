@@ -6,5 +6,6 @@ for index in penalty :
     students[index] += 1
     if students[index] >= k :
         res = index
+        break
 
 print(res)
