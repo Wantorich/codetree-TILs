@@ -24,14 +24,12 @@ for _ in range(m) :
 # 곱해서 음수가 되도 바뀐거고
 
 changed = 0
-for i in range(1, idx_a+1) :
-    prev_diff = pos_a[i-1] - pos_b[i-1]
-    diff = pos_a[i] - pos_b[i]
-    if prev_diff == 0 and diff == 0 :
-        continue
-    else :
-        if prev_diff == 0 and diff != 0:
-            changed += 1
+heading = [0] * idx_a
+for i in range(1, idx_a) :
+    heading[i] = 0 if pos_a[i] >= pos_b[i] else 1
 
+for i in range(2, len(heading)) :
+    if heading[i] + heading[i-1] == 1 :
+        changed += 1
 
-print(changed-1)
+print(changed)
