@@ -36,10 +36,10 @@ def in_range(x,y) :
 cnt = 0
 x, y = x + dxs[dir_num], y + dys[dir_num]
 while in_range(x,y) :
-    if (squares[x][y] == "\\" and dir_num % 2 == 0) or (squares[x][y] == "/" and dir_num % 2 == 1) :
-        dir_num = (dir_num - 1 + 4) % 4
-    else :
+    if (squares[x][y] == "\\" and dir_num % 2 == 1) or (squares[x][y] == "/" and dir_num % 2 == 0) :
         dir_num = (dir_num + 1) % 4
+    else :
+        dir_num = (dir_num - 1 + 4) % 4
     x, y = x + dxs[dir_num], y + dys[dir_num]
     cnt += 1
 
