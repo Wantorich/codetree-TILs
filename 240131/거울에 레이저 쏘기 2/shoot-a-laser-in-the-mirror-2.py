@@ -13,23 +13,13 @@ x, y = 0, 0
 circuit = 3
 for _ in range(k) :
     nx, ny = x + dxs[circuit], y + dys[circuit]
-    if (nx == 0 and ny == n+1) or (nx == n+1 and ny == n+1) and (nx == n+1 and ny == 0) :
+    if (nx == 0 and ny == n+1) or (nx == n+1 and ny == n+1) or (nx == n+1 and ny == 0) :
         circuit = (circuit + 1) % 4
         nx, ny = nx + dxs[circuit], ny + dys[circuit]
     x, y = nx, ny
-    
-# 0 1 2 3 -(> S W N E
-dir_num = (k - 1) // n # init dir
-# init = k % n + dir_num * n
-# if dir_num == 0 :
-#     x, y = 0, k+1
-# elif dir_num == 1 :
-#     x, y = k % n + dir_num, n+1
-# elif dir_num == 2 :
-#     x, y = n+1, init
-# else :
-#     x, y = init, 0
 
+# 0 1 2 3 -> S W N E
+dir_num = (k - 1) // n # init dir
 def in_range(x,y) :
     return 1 <= x <= n and 1 <= y <= n
 
