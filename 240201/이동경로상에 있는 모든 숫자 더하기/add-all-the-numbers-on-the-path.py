@@ -12,10 +12,9 @@ def in_range(x, y) :
 
 total = 0
 x, y = n // 2, n // 2
+total += squares[x][y]
 for command in commands :
-    if visited[x][y] == False :
-        total += squares[x][y]
-        visited[x][y] = True
+    visited[x][y] = True
     
     if command == 'R' :
         mov_dir = (mov_dir + 1) % 4
@@ -25,8 +24,7 @@ for command in commands :
         nx, ny = x + dxs[mov_dir], y + dys[mov_dir]
         if in_range(nx, ny) :
             x, y = nx, ny
-
-if visited[x][y] == False :
-    total += squares[x][y]
+        if visited[x][y] == False :
+            total += squares[x][y]
 
 print(total)
