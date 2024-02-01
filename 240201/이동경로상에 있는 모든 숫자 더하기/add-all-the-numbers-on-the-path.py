@@ -25,7 +25,6 @@ for command in commands :
         if not in_range(nx, ny) :
             continue
         x, y = nx, ny
-        if visited[x][y] == False :
-            total += squares[x][y]
+        total += squares[x][y]
 
 print(total)
