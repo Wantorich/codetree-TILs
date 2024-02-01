@@ -1,7 +1,6 @@
 n, t = map(int, input().split())
 commands = input()
 squares = [list(map(int, input().split())) for _ in range(n)]
-visited = [[False] * n for _ in range(n)]
 
 # dir -> W N E S
 dxs, dys = [0, -1, 0, 1], [-1, 0, 1, 0]
@@ -14,8 +13,6 @@ total = 0
 x, y = n // 2, n // 2
 total += squares[x][y]
 for command in commands :
-    visited[x][y] = True
-    
     if command == 'R' :
         mov_dir = (mov_dir + 1) % 4
     elif command == 'L' :
