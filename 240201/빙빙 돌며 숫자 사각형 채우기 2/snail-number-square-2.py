@@ -21,5 +21,5 @@ for _ in range(m*n) :
         mov_dir = (mov_dir + 1) % 4
         x, y = x + dxs[mov_dir], y + dys[mov_dir]
     
-for row in range(m) :
+for row in range(n) :
     print(' '.join(map(str, squares[row])))
