@@ -22,8 +22,9 @@ for command in commands :
         mov_dir = (mov_dir - 1 + 4) % 4
     else :
         nx, ny = x + dxs[mov_dir], y + dys[mov_dir]
-        if in_range(nx, ny) :
-            x, y = nx, ny
+        if not in_range(nx, ny) :
+            continue
+        x, y = nx, ny
         if visited[x][y] == False :
             total += squares[x][y]
 
