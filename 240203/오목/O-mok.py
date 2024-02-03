@@ -35,7 +35,7 @@ def is_win_Rcross(i, j) :
 def is_win_Lcross(i, j) :
     curr = grid[i][j]
     for k in range(1, 5) :
-        x, y = i-k, j-k
+        x, y = i+k, j-k
         if in_range(x,y) and grid[x][y] != curr :
             return False
     return True
