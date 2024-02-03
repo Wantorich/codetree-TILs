@@ -1,10 +1,8 @@
-import sys
-
 n = int(input())
 nums = [int(input()) for _ in range(n)]
 
 def is_carry(x,y,z) :
-    while x != 0 and y != 0 and z != 0:
+    while x != 0 or y != 0 or z != 0:
         remain_add = (x % 10) + (y % 10) + (z % 10)
         if remain_add >= 10 :
             return True
