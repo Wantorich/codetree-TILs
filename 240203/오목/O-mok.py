@@ -54,7 +54,7 @@ for i in range(size) :
                 x, y = i+2, j+2
             if is_win_Lcross(i,j) :
                 winner = grid[i][j]
-                x, y = i-2, j-2
+                x, y = i+2, j-2
 
 
 print(winner)
