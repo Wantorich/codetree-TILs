@@ -24,28 +24,22 @@ def is_win_vertical(i, j) :
             return False
     return True
 
-def is_win_cross(i, j) :
+def is_win_Rcross(i, j) :
     curr = grid[i][j]
-    r_cross, l_cross = True, True
     for k in range(1, 5) :
         x, y = i+k, j+k
         if in_range(x,y) and grid[x][y] != curr :
-            r_cross = False
-            break
+            return False
+    return True
 
+def is_win_Lcross(i, j) :
+    curr = grid[i][j]
     for k in range(1, 5) :
         x, y = i-k, j-k
         if in_range(x,y) and grid[x][y] != curr :
-            l_cross = False
-            break
-
-    if l_cross or r_cross :
-        return True
-    else : 
-        return False
-
-
-
+            return False
+    return True
+    
 for i in range(size) :
     for j in range(size) :
         if grid[i][j] != 0 :
@@ -55,9 +49,13 @@ for i in range(size) :
             if is_win_vertical(i, j) :
                 winner = grid[i][j]
                 x, y = i+2, j
-            if is_win_cross(i,j) :
+            if is_win_Rcross(i,j) :
                 winner = grid[i][j]
                 x, y = i+2, j+2
+            if is_win_Lcross(i,j) :
+                winner = grid[i][j]
+                x, y = i-2, j-2
+
 
 print(winner)
 print(x+1, y+1)
