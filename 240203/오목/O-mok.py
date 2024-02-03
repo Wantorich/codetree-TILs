@@ -26,10 +26,16 @@ def is_win_vertical(i, j) :
 
 def is_win_cross(i, j) :
     curr = grid[i][j]
-    for k in range(4) :
-        i, j = i+1, j+1
-        if in_range(i,j) and grid[i][j] != curr :
+    for k in range(1, 5) :
+        x, y = i+k, j+k
+        if in_range(x,y) and grid[x][y] != curr :
             return False
+
+    for k in range(1, 5) :
+        x, y = i-k, j-k
+        if in_range(x,y) and grid[x][y] != curr :
+            return False
+
     return True
 
 
