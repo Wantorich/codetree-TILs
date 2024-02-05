@@ -15,8 +15,8 @@ for i in range(size) :
             continue
         currX, currY = i, j
         status = grid[i][j]
-        cnt = 0
         for dx, dy in zip(dxs, dys) :
+            cnt = 0 
             while True :
                 nx, ny = currX + dx, currY + dy
                 if not in_range(nx, ny) or grid[nx][ny] != status :
