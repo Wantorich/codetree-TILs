@@ -14,7 +14,7 @@ for i in range(MAX_NUM+1) :
         if arr[j] == 0 :
             continue
         sliced = arr[i:j+1]
-        if len(sliced) % 2 == 0 and sliced.count('G') == sliced.count('H') :
+        if sliced.count('G') == sliced.count('H') :
             max_len = max(max_len, j-i)
         elif len(sliced) == sliced.count('G') or len(sliced) == sliced.count('H') :
             max_len = max(max_len, j-i)
