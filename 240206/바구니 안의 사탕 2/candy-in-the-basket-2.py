@@ -8,11 +8,10 @@ for _ in range(n) :
 
 max_val = 0
 # k <= c , c+k <= MAX_NUM
-for c in range(k, MAX_NUM - k + 1) :
-    for i in range(MAX_NUM - 2*k) :
-        sub_sum = 0
-        for j in range(i, i+2*k+1) :
-            sub_sum += places[j]
-        max_val = max(max_val, sub_sum)
+for c in range(k, k + MAX_NUM) :
+    sub_sum = 0
+    for i in range(c-k, min(c+k+1, MAX_NUM+1)) :
+        sub_sum += places[i]
+    max_val = max(max_val, sub_sum)
 
 print(max_val)
