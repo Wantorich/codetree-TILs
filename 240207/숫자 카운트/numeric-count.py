@@ -24,6 +24,8 @@ cnt = 0
 for i in range(1, 10) :
     for j in range(1, 10) :
         for k in range(1, 10) :
+            if i == j or j == k or i == k :
+                continue
             arr = [i, j, k]
             flag = True
             for l in range(n) :
