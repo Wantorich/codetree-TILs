@@ -1,11 +1,12 @@
 # 직사각형의 넓이를 최소로하려면
 # 점들 중에서 y값의 최소, 최대 구하고
 # x값의 최소 최대 구해서 넓이구하면됨
+import sys
 
 n = int(input())
 segments = [tuple(map(int, input().split())) for _ in range(n)]
 
-ans = 10000
+ans = sys.maxsize
 for i in range(n):
     # count = [0] * 11 # initialize
     left, right = 40000, 1
