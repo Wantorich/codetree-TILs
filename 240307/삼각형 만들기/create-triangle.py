@@ -13,7 +13,8 @@ def get_area(i, j, k) :
     lens.sort()
     if lens[0] + lens[1] != lens[2] :
         return 0
-    return int(math.sqrt(lens[0]*lens[1]))
+    # return int(math.sqrt(lens[0]*lens[1]))
+    return int(math.sqrt(lens[0]) * math.sqrt(lens[1]))
 
 n = int(input())
 points = [tuple(map(int, input().split())) for _ in range(n)]
