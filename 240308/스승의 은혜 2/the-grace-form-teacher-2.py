@@ -12,7 +12,7 @@ for i in range(n) :
         if i == j :
             p //= 2
         pay -= p
-        if pay < 0 :
+        if pay <= 0 :
             break
     min_pay = min(min_pay, j+1)
 
