@@ -20,8 +20,6 @@ for i in range(n) :
     cnt = 0
     for j in range(n) :
         p = curr_price[j]
-        if i == j :
-            p //= 2
         pay -= p
         if pay < 0 :
             break
