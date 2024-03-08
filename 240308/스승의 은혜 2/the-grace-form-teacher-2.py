@@ -4,7 +4,7 @@ n, budget = map(int, input().split())
 price = [int(input()) for _ in range(n)]
 price.sort()
 
-min_pay = n
+max_pay = 0
 for i in range(n) :
     pay = budget
     for j in range(n) :
@@ -14,6 +14,6 @@ for i in range(n) :
         pay -= p
         if pay <= 0 :
             break
-    min_pay = min(min_pay, j+1)
+    max_pay = max(max_pay, j)
 
-print(min_pay)
+print(max_pay)
