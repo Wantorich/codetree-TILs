@@ -7,6 +7,7 @@ price.sort()
 max_pay = 0
 for i in range(n) :
     pay = budget
+    cnt = 0
     for j in range(n) :
         p = price[j]
         if i == j :
@@ -14,6 +15,7 @@ for i in range(n) :
         pay -= p
         if pay <= 0 :
             break
-    max_pay = max(max_pay, j)
+        cnt += 1
+    max_pay = max(max_pay, cnt)
 
 print(max_pay)
