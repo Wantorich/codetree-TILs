@@ -2,6 +2,7 @@ import sys
 
 n, budget = map(int, input().split())
 price = [int(input()) for _ in range(n)]
+price.sort()
 
 min_pay = n
 for i in range(n) :
