@@ -13,7 +13,7 @@ for i in range(n) :
         if i == j :
             p //= 2
         pay -= p
-        if pay <= 0 :
+        if pay < 0 :
             break
         cnt += 1
     max_pay = max(max_pay, cnt)
