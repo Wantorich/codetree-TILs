@@ -11,8 +11,8 @@ for i in range(s) :
     # print(notes)
     for j in range(d) :
         if who == notes[j][0] and when >= notes[j][2] + 1 :
-            suspect[i].append(notes[j][1])
-            # if not notes[j][1] in corrupt :
+            if not notes[j][1] in suspect[i] :
+                suspect[i].append(notes[j][1])
             #     corrupt.append(notes[j][1])
 
 # print(suspect)
@@ -28,10 +28,10 @@ for cheese in suspect[0] :
 # 아픈사람은 의심되는 치즈를 무조건 먹었어야해
 # print(corrupt)
 for cheese in corrupt :
-    num = 0
+    num = set()
     for j in range(d) :
         if notes[j][1] == cheese :
-            num += 1
-    ans = max(ans, num)
+            num.add(notes[j][0])
+    ans = max(ans, len(num))
 
 print(ans)
