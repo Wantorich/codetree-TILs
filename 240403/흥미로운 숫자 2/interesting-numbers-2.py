@@ -1,10 +1,12 @@
 X, Y = map(int, input().split())
 
 def find_num(n) :
-    str_nums = list(str(n))
-    str_nums.sort()
-    fst_ = str_nums[0]
-    last_ = str_nums[-1]
+    str_nums = list(map(int, list(str(n))))
+    # str_nums.sort()
+    # fst_ = str_nums[0]
+    # last_ = str_nums[-1]
+    fst_ = min(str_nums)
+    last_ = max(str_nums)
     fst_cnt = last_cnt = 0
     for num in str_nums :
         if fst_ != num :
