@@ -4,6 +4,6 @@ for i in range (c // a) :
     for j in range(b // a) :
         max_num = a * (i + 1) + b * (j + 1)
         if max_num <= c :
-            ans = max_num
+            ans = max(ans, max_num)
 
 print(ans)
