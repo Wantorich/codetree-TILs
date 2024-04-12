@@ -12,6 +12,8 @@ def can_win(a, b) :
             exist[i] = True
     for a, b, c in bingo :
         if exist[a] == True and exist[b] == True and exist[c] == True :
+            if temp[a] == temp[b] == temp[c] :
+                continue
             return True
     return False
 
@@ -19,13 +21,13 @@ for i in range(3) :
     input_ = list(map(int, input()))
     grid.extend(input_)
 
-nums = set(grid)
+nums = list(set(grid))
 ans = 0
 
 for i in range(len(nums)) :
     for j in range(i+1, len(nums)) :
         temp = grid
-        if can_win(i, j) :
+        if can_win(nums[i], nums[j]) :
             ans += 1
 
 print(ans)
