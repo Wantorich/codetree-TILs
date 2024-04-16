@@ -10,7 +10,7 @@ while True :
     # print(temp)
     flag = False
     for _, v in temp.items() :
-        if v == 2 :
+        if v >= 2 :
             ans += 1 
             flag = True
             break
