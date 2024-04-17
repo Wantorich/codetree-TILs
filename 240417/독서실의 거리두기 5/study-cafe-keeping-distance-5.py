@@ -14,11 +14,12 @@ def dis(s) :
             else :
                 dis += 1
         else :
-            dis += 1
-            if s[i+1] == '1' and flag:
-                ans = min(ans, dis)   
-                dis = 0  
-                flag = False
+            if flag :
+                dis += 1
+                if s[i+1] == '1' :
+                    ans = min(ans, dis)   
+                    dis = 0  
+                    flag = False
     # print(ans)
     return ans    
 
