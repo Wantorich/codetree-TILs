@@ -5,17 +5,20 @@
 def dis(s) :
     dis = 0
     ans = len(s)
+    flag = False
     for i in range(len(s)-1) :
         if s[i] == '1' :
+            flag = True
             if s[i+1] == '1':
                 return 1
             else :
                 dis += 1
         else :
             dis += 1
-            if s[i+1] == '1' :
+            if s[i+1] == '1' and flag:
                 ans = min(ans, dis)   
                 dis = 0  
+                flag = False
     # print(ans)
     return ans    
 
