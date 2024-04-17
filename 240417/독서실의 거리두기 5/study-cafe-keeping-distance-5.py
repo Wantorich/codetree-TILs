@@ -8,7 +8,7 @@ def dis(s) :
     for i in range(len(s)-1) :
         if s[i] == '1' :
             if s[i+1] == '1':
-                return 0
+                return 1
             else :
                 dis += 1
         else :
