@@ -3,7 +3,7 @@ nums = [int(input()) for _ in range(n)]
 nums.sort()
 ans = 0
 
-for i in range(1, n) :
+for i in range(n) :
     slice_arr = nums[i:]
     min_val = min(slice_arr)
     cnt = 0
