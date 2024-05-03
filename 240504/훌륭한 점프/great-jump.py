@@ -12,7 +12,7 @@ def possible(num) :
 n, k = map(int, input().split())
 nums = list(map(int, input().split()))
 
-ans = n
+ans = max(nums)
 for i in range(n, max(nums[0], nums[-1]), -1) :
     if possible(i) :
         ans = min(ans, i-1)
