@@ -9,16 +9,22 @@
 
 N, L = map(int,input().split())
 nums = list(map(int,input().split()))
+ans = 0
 
-nums.sort()
-for i in range(L) :
-    nums[i] += 1
+# H이상인 원소가 H개 이상이라는거는
+# [H, ... h개]
 
-for H in range(N, 0, -1) :
+for H in range(1, N+1) :
+    copy = nums[:]
+    for i in range(N) :
+        if H - copy[i] == 1 :
+            copy[i] += 1
     cnt = 0
-    for n in nums :
+    for n in copy :
         if n >= H :
             cnt += 1
-    if cnt >= H :
-        print(H)
-        break
+        if cnt >= H :
+            ans = H
+            break
+                
+print(ans)
