@@ -16,9 +16,11 @@ ans = 0
 
 for H in range(1, N+1) :
     copy = nums[:]
+    plus_cnt = L
     for i in range(N) :
-        if H - copy[i] == 1 :
+        if H - copy[i] == 1 and plus_cnt > 0:
             copy[i] += 1
+            plus_cnt -= 1
     cnt = 0
     for n in copy :
         if n >= H :
