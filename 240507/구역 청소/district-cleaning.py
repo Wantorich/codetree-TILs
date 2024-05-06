@@ -5,8 +5,15 @@ c, d = map(int, input().split())
 sum_dis = (b-a) + (d-c)
 
 if c <= b <= d :
-    sum_dis -= b-c
+    if c <= a :
+        sum_dis -= b-a
+    else :
+        sum_dis -= b-c
 elif a <= d <= b :
-    sum_dis -= d-a
+    if a <= c :
+        sum_dis -= d-c
+    else :
+        sum_dis -= d-a
+        
 
 print(sum_dis)
