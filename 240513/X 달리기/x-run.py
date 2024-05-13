@@ -8,11 +8,14 @@
 
 dis = int(input())
 speed = 1
+ans = 0
 
-while True :
+while dis > 0 :
     if speed**2 <= dis <= (speed+1)**2 :
-        remain = dis - speed**2
-        ans = speed*2 + remain - 1
-        print(ans)
-        break
-    speed += 1
+        dis -= speed**2
+        ans += speed*2 - 1
+        speed = 1
+    else :
+        speed += 1
+    
+print(ans)
