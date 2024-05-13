@@ -8,7 +8,7 @@ ans = 0
 
 for i in range(n-1, -1, -1) :
     if remain[i] < 0 :
-        for j in range(0, i) :
+        for j in range(i-1, -1, -1) :
             if remain[j] > 0 :
                 diff = min(abs(remain[j]), abs(remain[i]))
                 remain[j] -= diff
