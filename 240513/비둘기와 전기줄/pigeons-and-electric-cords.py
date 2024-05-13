@@ -3,7 +3,7 @@
 # N만큼 배열을 잡고 배열의 값을 바꿔주는걸로 판단
 
 n = int(input())
-arr = [-1] * (n+1)
+arr = [-1] * (11)
 ans = 0
 
 for i in range(n) :
