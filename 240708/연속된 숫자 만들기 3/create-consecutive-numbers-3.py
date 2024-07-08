@@ -5,14 +5,14 @@ if a+1 == b and b+1 == c:
 elif a+1 == b:
     print(c-b-1)
 elif b+1 == c:
-    print(b-a-1)
+    print(b-1-a)
 else:
     if b-a < c-b:
         t = b+1
-        print(c-t-1)
+        print(c-t)
     else:
         t = b-1
-        print(t-a-1)
+        print(t-a)
 
 
 
