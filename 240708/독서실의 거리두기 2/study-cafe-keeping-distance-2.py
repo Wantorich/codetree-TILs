@@ -33,6 +33,7 @@ if seats[-1] == '0':
 
 l = seats.index('1')
 max_space = 0
+max_l = max_r = -1
 for i in range(seats.index('1')+1, N):
     # 1 0 0 0 1, 1 0 0 0 0 1
     if seats[i] == '1':
@@ -44,9 +45,11 @@ for i in range(seats.index('1')+1, N):
             max_r = r
         l = r
 
-insert_idx = (max_l+max_r)//2
-seats[insert_idx] = '1'
-result[2] = cal_dis()
+if max_l >= 0 and max_r >= 0:
+    insert_idx = (max_l+max_r)//2
+    seats[insert_idx] = '1'
+    result[2] = cal_dis()
+    
 
 # print(''.join(seats))
 
