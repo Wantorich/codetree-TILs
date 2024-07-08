@@ -7,10 +7,12 @@ seats = list(input())
 
 l = 0
 max_dis = 0
+min_dis = N
 for i in range(1, N-1):
     if seats[i] == '1':
         r = i
         dis = r - l
+        min_dis = min(min_dis, dis)
         if dis > max_dis:
             max_dis = dis
             max_l = l
@@ -18,7 +20,9 @@ for i in range(1, N-1):
         l = r
 
 insert = (max_r - max_l) // 2 + max_l
-print(min(max_r - insert, insert - max_l))
+seats[insert] = '1'
+# print(''.join(seats))
+print(min(min(max_r - insert, insert - max_l), min_dis))
 
 # 1 0 0 0 1
 # 1 0 0 0 0 1
