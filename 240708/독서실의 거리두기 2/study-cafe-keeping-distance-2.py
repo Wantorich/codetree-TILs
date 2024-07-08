@@ -36,7 +36,7 @@ seats[insert_idx] = '1'
 # print(''.join(seats))
 
 # print((max_l+max_r)//2 - max_l, l_space-1, r_space-1)
-result = max(insert_idx - max_l, l_space-1, r_space-1)
+result = max(insert_idx - max_l, l_space, r_space)
 print(result)
 
 
