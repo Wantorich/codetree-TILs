@@ -8,7 +8,7 @@ seats = list(input())
 l = 0
 max_dis = 0
 min_dis = N
-for i in range(1, N-1):
+for i in range(1, N):
     if seats[i] == '1':
         r = i
         dis = r - l
