@@ -18,6 +18,7 @@ public class Main {
             int higher = ts.higher(it);
             if (higher - standard >= M) {
                 minDiff = Math.min(minDiff, higher - standard);
+                if (minDiff == M) break;
                 standard = ts.higher(standard);
                 it = standard;
                 continue;
