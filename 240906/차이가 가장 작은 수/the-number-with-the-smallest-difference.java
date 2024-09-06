@@ -7,25 +7,14 @@ public class Main {
         int N = sc.nextInt();
         int M = sc.nextInt();
         TreeSet<Integer> ts = new TreeSet();
+        int minDis = Integer.MAX_VALUE;
         for (int i = 0; i < N; i++) {
-            ts.add(sc.nextInt());
+            int num = sc.nextInt();
+            ts.add(num);
+            if (ts.size() < 2) continue;
+            if (ts.higher(num) != null && ts.higher(num) - num >= M) minDis = Math.min(minDis, ts.higher(num) - num);
+            if (ts.lower(num) != null && num - ts.lower(num) >= M) minDis = Math.min(minDis, num - ts.lower(num));
         }
-
-        int standard = ts.first();
-        int it = standard;
-        int minDiff = Integer.MAX_VALUE;
-        while (it < ts.last()) {
-            int higher = ts.higher(it);
-            if (higher - standard >= M) {
-                minDiff = Math.min(minDiff, higher - standard);
-                if (minDiff == M) break;
-                standard = ts.higher(standard);
-                it = standard;
-                continue;
-            }
-            it = higher;
-        }
-        if (minDiff == Integer.MAX_VALUE) minDiff = -1;
-        System.out.println(minDiff);
+        System.out.println(minDis);
     }
 }
