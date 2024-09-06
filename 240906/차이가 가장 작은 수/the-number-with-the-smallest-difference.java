@@ -24,6 +24,7 @@ public class Main {
             }
             it = higher;
         }
+        if (minDiff == Integer.MAX_VALUE) minDiff = -1;
         System.out.println(minDiff);
     }
 }
