@@ -15,6 +15,7 @@ public class Main {
             if (ts.higher(num) != null && ts.higher(num) - num >= M) minDis = Math.min(minDis, ts.higher(num) - num);
             if (ts.lower(num) != null && num - ts.lower(num) >= M) minDis = Math.min(minDis, num - ts.lower(num));
         }
+        if (minDis == Integer.MAX_VALUE) minDis = -1;
         System.out.println(minDis);
     }
 }
