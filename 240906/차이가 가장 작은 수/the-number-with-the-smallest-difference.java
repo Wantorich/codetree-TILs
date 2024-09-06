@@ -11,7 +11,6 @@ public class Main {
         for (int i = 0; i < N; i++) {
             int num = sc.nextInt();
             ts.add(num);
-            if (ts.size() < 2) continue;
             if (ts.higher(num) != null && ts.higher(num) - num >= M) minDis = Math.min(minDis, ts.higher(num) - num);
             if (ts.lower(num) != null && num - ts.lower(num) >= M) minDis = Math.min(minDis, num - ts.lower(num));
         }
