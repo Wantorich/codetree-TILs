@@ -5,16 +5,16 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         int M = sc.nextInt();
-        int [] curr = new int[N];
-        int [] accel = new int[N];
+        long [] curr = new long[N];
+        long [] accel = new long[N];
         for (int i = 0; i < N; i++) {
-            curr[i] = sc.nextInt();
-            accel[i] = sc.nextInt();
+            curr[i] = sc.nextLong();
+            accel[i] = sc.nextLong();
         }        
 
-        TreeSet<Integer> ts = new TreeSet();
+        TreeSet<Long> ts = new TreeSet();
         for (int i = N-1; i >= 0; i--) {
-            int nextPos = curr[i] + accel[i] * M;
+            long nextPos = curr[i] + accel[i] * M;
             if (ts.floor(nextPos) == null) {
                 // 내가 누굴 추월하지 않았음
                 ts.add(nextPos);
