@@ -26,8 +26,12 @@ public class Main {
                     curr[i] = nextPos;
                 } else {
                     // 내가 i+1번째를 추월해버림
-                    group[i+1] += group[i];
-                    group[i] = 0;
+                    for (int k = i+1; k < N; k++) {
+                        if (group[k] == 0) continue;
+                        group[k] += group[i];
+                        group[i] = 0;
+                        break;
+                    }
                 }
             }
             ts.clear();
