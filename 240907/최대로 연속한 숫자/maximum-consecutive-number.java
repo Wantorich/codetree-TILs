@@ -25,7 +25,7 @@ public class Main {
             leftDis = del - left - 1;
             rightDis = right - del - 1;
 
-            dists.remove(leftDis + rightDis + 1);
+            if (dists.size() >= 2) dists.remove(leftDis + rightDis + 1);
             dists.add(leftDis);
             dists.add(rightDis);
             System.out.println(dists.last());
