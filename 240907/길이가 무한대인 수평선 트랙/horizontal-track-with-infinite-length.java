@@ -15,26 +15,23 @@ public class Main {
         }        
 
         TreeSet<Integer> ts = new TreeSet();
-        for (int t = 1; t <= M; t++) {
-            for (int i = N-1; i >= 0; i--) {
-                if (group[i] == 0) continue; // 다른 누군가의 그룹에 속해있음
+        for (int i = N-1; i >= 0; i--) {
+            if (group[i] == 0) continue; // 다른 누군가의 그룹에 속해있음
 
-                int nextPos = curr[i] + accel[i];
-                if (ts.floor(nextPos) == null) {
-                    // 내가 누굴 추월하지 않았음
-                    ts.add(nextPos);
-                    curr[i] = nextPos;
-                } else {
-                    // 내가 i+1번째를 추월해버림
-                    for (int k = i+1; k < N; k++) {
-                        if (group[k] == 0) continue;
-                        group[k] += group[i];
-                        group[i] = 0;
-                        break;
-                    }
+            int nextPos = curr[i] + accel[i] * M;
+            if (ts.floor(nextPos) == null) {
+                // 내가 누굴 추월하지 않았음
+                ts.add(nextPos);
+                curr[i] = nextPos;
+            } else {
+                // 내가 i+1번째를 추월해버림
+                for (int k = i+1; k < N; k++) {
+                    if (group[k] == 0) continue;
+                    group[k] += group[i];
+                    group[i] = 0;
+                    break;
                 }
             }
-            ts.clear();
         }
 
         int result = 0;
