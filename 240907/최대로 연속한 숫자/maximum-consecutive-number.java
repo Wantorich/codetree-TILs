@@ -9,18 +9,15 @@ public class Main {
         TreeSet<Integer> delts = new TreeSet();
         TreeSet<Integer> dists = new TreeSet();
 
+        delts.add(-1); delts.add(N+1);
         for (int i = 0; i < M; i++) {
             int del = sc.nextInt();
             delts.add(del);
-            int left = -1, right = N+1;
+            int left = 0, right = 0;
             int leftDis = 0, rightDis = 0;
 
-            if (delts.lower(del) != null) {
-                left = delts.lower(del);
-            }
-            if (delts.higher(del) != null) {
-                right = delts.higher(del);
-            }
+            left = delts.lower(del);
+            right = delts.higher(del);
 
             leftDis = del - left - 1;
             rightDis = right - del - 1;
