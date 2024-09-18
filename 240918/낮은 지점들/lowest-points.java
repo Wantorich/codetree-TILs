@@ -9,8 +9,10 @@ public class Main {
         while (N-- > 0) {
             int key = sc.nextInt();
             int value = sc.nextInt();
-            if (!hmap.containsKey(key)) hmap.put(key, value);
-            else hmap.compute(key, (k, v) -> value < v ? value : v);
+            // if (!hmap.containsKey(key)) hmap.put(key, value);
+            // else hmap.compute(key, (k, v) -> value < v ? value : v);
+            hmap.computeIfPresent(key, (k, v) -> value < v ? value : v);
+            hmap.computeIfAbsent(key,  (v) -> value);
         }
         System.out.println(hmap.values().stream().mapToLong(v -> v).sum());
     }
