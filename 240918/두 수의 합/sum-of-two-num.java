@@ -16,7 +16,7 @@ public class Main {
         for (Integer key : map.keySet()) {
             if (map.get(K - key) == null) continue;
             int val = map.get(key);
-            if (K == key * 2) cnt += key * (key - 1) / 2;
+            if (K == key * 2) cnt += val * (val - 1);
             else cnt += val * map.get(K - key); 
         }
 
