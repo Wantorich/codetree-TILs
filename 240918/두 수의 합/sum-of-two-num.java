@@ -5,18 +5,21 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         int K = sc.nextInt();
-        int [] arr = new int[N];
-        for (int i = 0; i < N; i++) arr[i] = sc.nextInt();
-
         Map<Integer, Integer> map = new HashMap();
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i+1; j < arr.length; j++) {
-                int key = arr[i] + arr[j];
-                if (key != K) continue;
-                map.computeIfPresent(key, (k, v) -> v+1);
-                map.computeIfAbsent(key, v -> 1);
-            }
+        for (int i = 0; i < N; i++) {
+            int val = sc.nextInt();
+            if (map.get(val) == null) map.put(val, 1);
+            else map.compute(val, (k, v) -> v+1);
         }
-        System.out.println(map.get(K));
+
+        int cnt = 0;
+        for (Integer key : map.keySet()) {
+            if (map.get(K - key) == null) continue;
+            int val = map.get(key);
+            if (K == key * 2) cnt += key * (key - 1) / 2;
+            else cnt += val * map.get(K - key); 
+        }
+
+        System.out.println(cnt / 2);
     }
 }
