@@ -10,7 +10,7 @@ public class Main {
             int key = sc.nextInt();
             int value = sc.nextInt();
             if (!hmap.containsKey(key)) hmap.put(key, value);
-            else hmap.compute(key, (k, v) -> value < v ? value : v);
+            else hmap.compute(key, (k, v) -> key == k && value < v ? value : v);
         }
         System.out.println(hmap.values().stream().mapToInt(v -> v).sum());
     }
